@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This README contains details of how to use the multilingual machine translation models we trained for NLLB-200. These neural multilingual machine translation models support translation between any pair of [200 languages](scripts/flores200/langs.txt). Not only do we support more than 200x200 translation directions, we also release the [quality](#open-sourced-models-and-metrics) of our final model on each of the 200x200 translation directions by measuring spBLEU and chrf++ on the [FLORES-200 benchmark](https://github.com/facebookresearch/flores). In the sections below, we share where our models can be downloaded, how they can be used for inference or finetuning, and more details about how to train your own multilingual machine translation models with Sparsely Gated Mixture of Experts, Expert Output Masking, Curriculum Learning, incorporating self-supervised learning (denoising auto-encoder like mBART), Online Distillation. We also share the training recipe for our final NLLB-200 MoE-128 model.
+This README contains details of how to use the multilingual machine translation models we trained for NLLB-200. These neural multilingual machine translation models support translation between any pair of [200 languages](https://github.com/facebookresearch/flores/blob/main/flores200/README.md#languages-in-flores-200). Not only do we support more than 200x200 translation directions, we also release the [quality](#open-sourced-models-and-metrics) of our final model on each of the 200x200 translation directions by measuring spBLEU and chrf++ on the [FLORES-200 benchmark](https://github.com/facebookresearch/flores/blob/main/flores200/README.md). In the sections below, we share where our models can be downloaded, how they can be used for inference or finetuning, and more details about how to train your own multilingual machine translation models with Sparsely Gated Mixture of Experts, Expert Output Masking, Curriculum Learning, incorporating self-supervised learning (denoising auto-encoder like mBART), Online Distillation. We also share the training recipe for our final NLLB-200 MoE-128 model.
 
 ## Citing Our Work
 
@@ -230,7 +230,7 @@ python examples/nllb/modeling/train/train_script.py \
 
 ### Prerequisites
 
-1. Follow the steps to download SPM-200 and FLORES-200 dataset [here](https://github.com/facebookresearch/flores/flores200).
+1. Follow the steps to download SPM-200 and FLORES-200 dataset [here](https://github.com/facebookresearch/flores/blob/main/flores200/README.md).
 2. Requires `sacrebleu>=2.1.0`
 3. Update [`evaluation/conf/cluster/example.yaml`](evaluation/conf/cluster/example.yaml) with your `data_dir`, `flores_path`, `cluster` partition, and `non_flores_path` (for non-FLORES evaluation).
 4. We use and recommend using `chrF++` metric which is automatically calculated using `sacrebleu` in our evaluation pipeline.
